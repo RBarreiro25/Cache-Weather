@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cache Weather</title>
+</head>
+    <body id="body">
+        <section id="content" class="content">
+            <div id="search_area">
+                <input class="input_search" id="input_search" type="search" placeholder="Digite a cidade...">
+                <button id="search" class="button_search">
+                    <img class="search_icon" src="./assets/search-icon.png" alt="icone de pesquisar">
+                </button> 
+            </div>
+
+            <div id="weather_infos" class="hidden">
+                    <h2>
+                        <span id="cidade"></span>
+                    </h2>
+                    <p id="temperatura"><span></span></p>
+                    <div id="decricao_container">
+                        <p id="descricao"></p>
+                        <img src="" id="clima-icon">
+                    </div>
+                    <div id="detalhes_container">
+                        <p id="sensacao_termica"></p>
+                        <p id="umidade"><span></span></p>
+                        <p id="vento"><span></span></p>
+                    </div>
+            </div>
+        </section>
+        
+        <script src="./js/weather.js"></script>
+    </body>
+</html>

@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root {
+    --white: #f0f0f0;
+    --font-main: 'Ubuntu', sans-serif;
+    --transition: all 0.25s ease;
+    --box-shadow-light: var(--box-shadow-light);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px auto;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: hidden;
+    font-family: var(--font-main);
+    background-image: url("./assets/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    padding: 2% 0;
+    width: 40%;
+    min-width: 350px;
+    max-width: 450px;
+    /* min-height: 450px; */
+    /* max-height: 490px; */
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    box-shadow: var(--box-shadow-light)
+}
+
+#search_area {
+    width: 90%;
+    border-radius: 35px;
+    background-color: #181C1F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px 15px 25px;
+    box-shadow: var(--box-shadow-light)
+}
+
+input[type=search], .button_search {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+input[type=search] {
+    font-size: 2rem;
+    width: 91%;
+    font-family: var(--font-main);
+    background-color: inherit;
+    color: var(--white);    
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 35px;
+    width: 35px;
+    border-radius: 50em;
+    background: url(./assets/clear-search-icon.png) no-repeat 40% 40%;
+    background-size: contain;
+    pointer-events: none;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: .7;
+}
+  
+input[type="search"]:focus::-webkit-search-cancel-button {
+    opacity: .3;
+    pointer-events: all;
+    transition: var(--transition);
+}
+
+input[type="search"]::-webkit-search-cancel-button:hover {
+    opacity: .7;
+    transition: var(--transition);
+}
+
+.button_search {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.button_search:hover {
+    transition: var(--transition);
+    filter: brightness(0.8);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.search_icon {
+    width: 100%;
+}
+
+#weather_infos {
+    margin-top: 20px;
+    height: 100%;
+    width: 90%;
+    gap: 5%;
+    color: var(--white);
+    text-align: left;
+    padding: 32px;
+    line-height: 1.6em;
+    font-size: 1.1em;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 38px;
+}
+
+#weather_infos h2 {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+#temperatura {
+    font-weight: 600;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+#decricao_container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#descricao {
+    margin-right: 8px;
+}
+
+.hidden {
+    display: none;
+    transition: var(--transition);
+}
+.active {
+    display: block;
+    transition: var(--transition);
+}
+
+@media only screen and (max-width: 1200px) {
+
+input[type=search] {
+    font-size: 1.5rem;
+}
+
+#weather_infos {
+    font-size: 1em;
+}
+
+}
