@@ -123,6 +123,7 @@ function font0emToggle() {
 // Eventos
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
+  cityInput.blur();
   alertValidation.innerText = "";
   divAlertValidation.classList.remove("active");
   
