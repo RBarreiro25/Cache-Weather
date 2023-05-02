@@ -206,6 +206,7 @@ input[type="search"]::placeholder {
     align-items: center;
     transition: var(--transition);
     transition: 1s;
+    
 }
 
 .flip_transition {
@@ -246,6 +247,7 @@ input[type="search"]::placeholder {
 	display: grid;
     gap: 5%;
     padding: 32px;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     color: var(--off-white);
     text-align: left;
@@ -260,6 +262,8 @@ input[type="search"]::placeholder {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: var(--off-white);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 #infos_front_header {
@@ -313,6 +317,8 @@ input[type="search"]::placeholder {
     transform: rotateY(180deg);
     color: var(--off-white);
     line-height: 2em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 #infos_back_header {
