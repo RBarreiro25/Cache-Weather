@@ -1,0 +1,12 @@
+
+.ease-1000ms {
+    /* transition-property: -CHANGE-;     TO PUT ON DIV! */
+    /* transition-timing-function: ease;   TO PUT ON DIV! */
+    transition-duration: 1s;
+}
+
+.ttf-cubic {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+
