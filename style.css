@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 :root {
+    --animate-delay: 0.5s;
     --off-white: #f0f0f0;
     --off-white-transp: rgba(240, 240, 240, 0.5);
-    --grey: #E6E6E6;
-    --grey-transp: rgba(230, 230, 230, 0.6);
     --blue: #022878;
     --blue-transp: rgba(50, 203, 255, 0.5);
     --white: #ffffff;
     --black: #000000;
-    --black-transp: rgba(0, 0, 0, 0.8);
+    --black-light-transp: rgba(16, 15, 15, 0.85);
     --black-light: #1e2021;
     --frosted-glass: rgba(255, 255, 255, 0.3);
     --font-main: 'Ubuntu', sans-serif;
@@ -36,7 +35,6 @@ body {
     margin: 0px auto;
     width: 100%;
     min-height: 100vh;
-    overflow-y: hidden;
     font-family: var(--font-main);
     background-image: url("./assets/bg.jpg");
     background-position: center;
@@ -90,7 +88,7 @@ body {
     justify-content: start;
     gap: 10px;
     box-shadow: var(--shadow-light);
-    margin-top: 50px;
+    margin-top: 30px;
     transition: var(--transition);
 }
 
@@ -126,7 +124,6 @@ body {
     justify-content: space-between;
     padding: 10px 15px 10px 25px;
     box-shadow: var(--shadow-strong);
-    transition: var(--transition);
 }
 
 input[type=search], .button_search {
@@ -280,7 +277,7 @@ input[type="search"]::placeholder {
 }
 
 .infos_front {
-    background-color: var(--frosted-glass);
+    background-color: var(--black-light-transp);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: var(--off-white);
@@ -332,7 +329,7 @@ input[type="search"]::placeholder {
 }
 
 .infos_back {
-    background-color: var(--frosted-glass);
+    background-color: var(--black-light-transp);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: var(--off-white);
@@ -354,7 +351,7 @@ input[type="search"]::placeholder {
 }
 
 .infos_back h2{
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 400;
 }
 
@@ -371,7 +368,7 @@ input[type="search"]::placeholder {
 }
 
 .detalhes_back_1 {
-    margin: 15px 0px;
+    margin: 10px 0px 25px 0px;
 }
 
 .detalhes_back_2 {
@@ -412,7 +409,10 @@ input[type="search"]::placeholder {
     font-size: 1.1em;
     font-weight: 400;
     transition: var(--transition);
-    
+}
+
+#footer_links p {
+    opacity: 0.8;
 }
 
 .footer_link {
@@ -420,6 +420,7 @@ input[type="search"]::placeholder {
     transition: transform 0.4s ease 0s;
     color: var(--off-white);
     filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.1));
+    font-weight: 300;
 }
 
 .footer_link:hover {
@@ -437,30 +438,43 @@ input[type="search"]::placeholder {
 @media only screen and (max-width: 1200px) {
 
 #title {
-    margin-top: 160px;
+    margin-top: 230px;
     line-height: 2.2em;
 }
 
 #title h1 {
-    font-size: 3.1em;
+    font-size: 2.8em;
     color: var(--white);
     filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.2));
 }
     
 #title p {
-    font-size: 1.1em;
+    font-size: 0.9em;
     text-align: center;
-    font-weight: 500;
     color: var(--off-white);
     filter: drop-shadow(0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2));
+}
+
+.move_up {
+    margin-top: -120px;
 }
 
 .alert_validation {
     font-size: 1em;
 }
 
+#search_area {
+    padding: 7px 15px 7px 20px;
+}
+
+.button_search {
+    width: 30px;
+    height: 30px;
+}
+
 input[type=search] {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    width: 85%;
 }
 
 #weather_infos {
