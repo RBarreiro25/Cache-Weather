@@ -229,10 +229,6 @@ input[type="search"]::placeholder {
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: translateZ(0px);
-    -webkit-transform: translateZ(0px);
-    -moz-transform: translateZ(0px);
-    -ms-transform: translateZ(0px);
 }
 
 .infos_wrapper {
