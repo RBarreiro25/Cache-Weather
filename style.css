@@ -9,7 +9,7 @@
     --white: #ffffff;
     --black: #000000;
     --black-light-transp: rgba(16, 15, 15, 0.85);
-    --black-light: #1e2021;
+    --black-lighter-transp: rgba(9, 8, 8, 0.85);
     --frosted-glass: rgba(255, 255, 255, 0.3);
     --font-main: 'Ubuntu', sans-serif;
     --transition: all 0.5s ease;
@@ -329,7 +329,7 @@ input[type="search"]::placeholder {
 }
 
 .infos_back {
-    background-color: var(--black-light-transp);
+    background-color: var(--black-lighter-transp);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: var(--off-white);
