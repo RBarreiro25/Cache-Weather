@@ -229,10 +229,6 @@ input[type="search"]::placeholder {
     -o-transition: -o-all 0.5s ease;
     transition: all 0.5s ease;
     background-color: rgba(0, 0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 .infos_wrapper {
@@ -241,6 +237,10 @@ input[type="search"]::placeholder {
     opacity: 0;
     transition: var(--transition);
     background-color: rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .active {
