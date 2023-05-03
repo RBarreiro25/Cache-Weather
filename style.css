@@ -206,7 +206,10 @@ input[type="search"]::placeholder {
     align-items: center;
     transition: var(--transition);
     transition: 1s;
-    
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;    
 }
 
 .flip_transition {
@@ -225,6 +228,10 @@ input[type="search"]::placeholder {
     -moz-transition: -moz-all 0.5s ease;
     -o-transition: -o-all 0.5s ease;
     transition: all 0.5s ease;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .infos_wrapper {
@@ -232,6 +239,10 @@ input[type="search"]::placeholder {
     height: 100%;
     opacity: 0;
     transition: var(--transition);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .active {
@@ -253,6 +264,8 @@ input[type="search"]::placeholder {
     gap: 5%;
     padding: 32px;
     -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
     backface-visibility: hidden;
     color: var(--off-white);
     text-align: left;
