@@ -22,6 +22,12 @@ const main = document.querySelector('#main');
 const contentSection = document.querySelector('#content');
 const title = document.querySelector('#title');
 const detailsElement = document.querySelectorAll('[data-details]');
+const convertElement = document.querySelector('[data-convert]');
+let tempCelsius = 0;
+let feelsLikeElementCelsius = 0;
+let tempMinCelsius = 0;
+let tempMaxCelsius = 0;
+let isFahrenheit = false;
 const infosInnerElement = document.querySelector('.infos_inner');
 const divInfosWrapper = document.querySelector('#infos_wrapper');
 let searchValidation = false;
@@ -58,17 +64,20 @@ const showWeatherData = async (city) => {
     }
   
     cityElement.innerText = data.name;
+    tempCelsius = data.main.temp;
     tempElement.innerText = `${data.main.temp.toFixed(1).replace(".", ",")}°C`;
     weatherIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`)
     // setting first char of description to uppercase
     description = data.weather[0].description;
     descFirstCharUp = description.charAt(0).toUpperCase() + description.slice(1);
     descElement.innerText = descFirstCharUp;
-  
+    feelsLikeElementCelsius = data.main.feels_like;
     feelsLikeElement.innerText = `Sensação térmica: ${data.main.feels_like.toFixed(1).replace(".", ",")}°C`
     umidityElement.innerText = `Umidade: ${data.main.humidity}%`;
     windElement.innerText = `Velocidade dos ventos: ${(data.wind.speed * 3.6).toFixed(1).replace(".", ",")}km/h`;
+    tempMinCelsius = data.main.temp_min;
     tempMinElement.innerText = `${data.main.temp_min.toFixed(1).replace(".", ",")}°C`;
+    tempMaxCelsius = data.main.temp_max;
     tempMaxElement.innerText = `${data.main.temp_max.toFixed(1).replace(".", ",")}°C`;
     sunRiseElement.innerText = `${unixToTime(data.sys.sunrise)}`
     sunSetElement.innerText = `${unixToTime(data.sys.sunset)}`
@@ -143,9 +152,10 @@ searchBtn.addEventListener("click", (event) => {
     divAlertValidation.classList.add("active");
     alertValidation.innerText = "Pesquisa vazia ou muito curta. Por favor, tente novamente.";
   }
-
   
 })
+
+
 
 cityInput.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -161,4 +171,19 @@ detailsElement.forEach(function(e) {
   })
 })
 
+convertElement.addEventListener("click", function() {
+  if(!isFahrenheit) {
+    tempElement.innerText = `${((tempCelsius * 1.8) + 32).toFixed(1).replace(".", ",")}°F`;
+    feelsLikeElement.innerText = `Sensação térmica: ${((feelsLikeElementCelsius * 1.8) + 32).toFixed(1).replace(".", ",")}°F`
+    tempMinElement.innerText = `${((tempMinCelsius * 1.8) + 32).toFixed(1).replace(".", ",")}°F`;
+    tempMaxElement.innerText = `${((tempMaxCelsius * 1.8) + 32).toFixed(1).replace(".", ",")}°F`;
+    isFahrenheit = true;
+  } else {
+    tempElement.innerText = `${tempCelsius.toFixed(1).replace(".", ",")}°C`;
+    feelsLikeElement.innerText = `Sensação térmica: ${feelsLikeElementCelsius.toFixed(1).replace(".", ",")}°C`
+    tempMinElement.innerText = `${tempMinCelsius.toFixed(1).replace(".", ",")}°C`;
+    tempMaxElement.innerText = `${tempMaxCelsius.toFixed(1).replace(".", ",")}°C`;
+    isFahrenheit = false;
+  }
+})
 
