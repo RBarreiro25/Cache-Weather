@@ -195,7 +195,7 @@ input[type="search"]::placeholder {
 
 #weather_infos {
     margin-top: 60px;
-    height: 340px;
+    height: 375px;
     width: 95%;
     perspective: 3000px;
     display: flex;
@@ -229,7 +229,7 @@ input[type="search"]::placeholder {
 }
 
 .infos_wrapper {
-    width: 340px;
+    width: 375px;
     height: 100%;
     opacity: 0;
     transition: var(--transition);
@@ -310,6 +310,7 @@ input[type="search"]::placeholder {
 .infos_front h2 {
     font-size: 2.5em;
     font-weight: 400;
+    line-height: 0.88em;
 }
 
 #temperatura {
