@@ -48,6 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    margin-bottom: 230px;
 }
 
 #title {
@@ -410,6 +411,7 @@ input[type="search"]::placeholder {
     position: static;
     bottom: 0;
     left: 0;
+    margin-bottom: 0.5%;
 }
 
 #footer_links {
