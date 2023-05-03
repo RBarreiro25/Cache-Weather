@@ -270,10 +270,10 @@ input[type="search"]::placeholder {
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: translateZ(1px);
-    -webkit-transform: translateZ(1px);
-    -moz-transform: translateZ(1px);
-    -ms-transform: translateZ(1px);
+    transform: translateZ(-1px);
+    -webkit-transform: translateZ(-1px);
+    -moz-transform: translateZ(-1px);
+    -ms-transform: translateZ(-1px);
 }
 
 #infos_front_header {
