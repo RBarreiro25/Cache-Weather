@@ -351,9 +351,15 @@ input[type="search"]::placeholder {
     margin-bottom: 15px;
 }
 
-#details {
+.details {
     position: relative;
     left: 60px;
+    width: 28px;
+}
+
+.details_back {
+    left: 5px;
+    position: relative;
     width: 28px;
 }
 
