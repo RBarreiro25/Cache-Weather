@@ -354,6 +354,7 @@ input[type="search"]::placeholder {
 #details {
     position: relative;
     left: 60px;
+    width: 28px;
 }
 
 #convertScale {
