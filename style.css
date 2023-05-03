@@ -253,6 +253,11 @@ input[type="search"]::placeholder {
     transition: 1s;
     opacity: 1;
     transition: var(--transition);
+    
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .infos {
