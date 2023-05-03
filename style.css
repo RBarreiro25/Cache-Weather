@@ -268,7 +268,13 @@ input[type="search"]::placeholder {
     backdrop-filter: blur(10px);
     color: var(--off-white);
     -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
 }
 
 #infos_front_header {
@@ -312,11 +318,16 @@ input[type="search"]::placeholder {
     background-color: var(--frosted-glass);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    transform: rotateY(180deg);
     color: var(--off-white);
     line-height: 2em;
     -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform: rotateY(180deg) translateZ(1px);
+    -webkit-transform: rotateY(180deg) translateZ(1px);
+    -moz-transform: rotateY(180deg) translateZ(1px);
+    -ms-transform: rotateY(180deg) translateZ(1px);
 }
 
 #infos_back_header {
