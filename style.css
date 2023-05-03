@@ -48,7 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
-    margin-bottom: 230px;
+    margin-bottom: 260px;
 }
 
 #title {
