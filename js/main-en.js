@@ -39,7 +39,7 @@ const getWeatherData = async (city) => {
     city = "salvador,br";
   }
 
-  const apiWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKeyWeather}&lang=pt_br`;
+  const apiWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKeyWeather}&lang=en`;
 
   const res = await fetch(apiWeatherUrl);
 
@@ -65,25 +65,25 @@ const showWeatherData = async (city) => {
   
     cityElement.innerText = data.name;
     tempCelsius = data.main.temp;
-    tempElement.innerText = `${data.main.temp.toFixed(1).replace(".", ",")}°C`;
+    tempElement.innerText = `${data.main.temp.toFixed(1)}°C`;
     weatherIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`)
     // setting first char of description to uppercase
     description = data.weather[0].description;
     descFirstCharUp = description.charAt(0).toUpperCase() + description.slice(1);
     descElement.innerText = descFirstCharUp;
     feelsLikeElementCelsius = data.main.feels_like;
-    feelsLikeElement.innerText = `Sensação térmica: ${data.main.feels_like.toFixed(1).replace(".", ",")}°C`
-    umidityElement.innerText = `Umidade: ${data.main.humidity}%`;
-    windElement.innerText = `Velocidade dos ventos: ${(data.wind.speed * 3.6).toFixed(1).replace(".", ",")}km/h`;
+    feelsLikeElement.innerText = `Feels like: ${data.main.feels_like.toFixed(1)}°C`
+    umidityElement.innerText = `Humidity: ${data.main.humidity}%`;
+    windElement.innerText = `Wind speed: ${(data.wind.speed * 3.6).toFixed(1)}km/h`;
     tempMinCelsius = data.main.temp_min;
-    tempMinElement.innerText = `${data.main.temp_min.toFixed(1).replace(".", ",")}°C`;
+    tempMinElement.innerText = `${data.main.temp_min.toFixed(1)}°C`;
     tempMaxCelsius = data.main.temp_max;
-    tempMaxElement.innerText = `${data.main.temp_max.toFixed(1).replace(".", ",")}°C`;
+    tempMaxElement.innerText = `${data.main.temp_max.toFixed(1)}°C`;
     sunRiseElement.innerText = `${unixToTime(data.sys.sunrise)}`
     sunSetElement.innerText = `${unixToTime(data.sys.sunset)}`
   } else {
     divAlertValidation.classList.add("active");
-    alertValidation.innerText = "Cidade não encontrada. Por favor, tente novamente.";
+    alertValidation.innerText = "City not found. Please, try again.";
   }
   
     
@@ -151,7 +151,7 @@ searchBtn.addEventListener("click", (event) => {
 
   } else {
     divAlertValidation.classList.add("active");
-    alertValidation.innerText = "Pesquisa vazia ou muito curta. Por favor, tente novamente.";
+    alertValidation.innerText = "Empty or too short search. Please, try again.";
   }
   
 })
@@ -174,16 +174,16 @@ detailsElement.forEach(function(e) {
 
 convertElement.addEventListener("click", function() {
   if(!isFahrenheit) {
-    tempElement.innerText = `${((tempCelsius * 1.8) + 32).toFixed(1).replace(".", ",")}°F`;
-    feelsLikeElement.innerText = `Sensação térmica: ${((feelsLikeElementCelsius * 1.8) + 32).toFixed(1).replace(".", ",")}°F`
-    tempMinElement.innerText = `${((tempMinCelsius * 1.8) + 32).toFixed(1).replace(".", ",")}°F`;
-    tempMaxElement.innerText = `${((tempMaxCelsius * 1.8) + 32).toFixed(1).replace(".", ",")}°F`;
+    tempElement.innerText = `${((tempCelsius * 1.8) + 32).toFixed(1)}°F`;
+    feelsLikeElement.innerText = `Sensação térmica: ${((feelsLikeElementCelsius * 1.8) + 32).toFixed(1)}°F`
+    tempMinElement.innerText = `${((tempMinCelsius * 1.8) + 32).toFixed(1)}°F`;
+    tempMaxElement.innerText = `${((tempMaxCelsius * 1.8) + 32).toFixed(1)}°F`;
     isFahrenheit = true;
   } else {
-    tempElement.innerText = `${tempCelsius.toFixed(1).replace(".", ",")}°C`;
-    feelsLikeElement.innerText = `Sensação térmica: ${feelsLikeElementCelsius.toFixed(1).replace(".", ",")}°C`
-    tempMinElement.innerText = `${tempMinCelsius.toFixed(1).replace(".", ",")}°C`;
-    tempMaxElement.innerText = `${tempMaxCelsius.toFixed(1).replace(".", ",")}°C`;
+    tempElement.innerText = `${tempCelsius.toFixed(1)}°C`;
+    feelsLikeElement.innerText = `Sensação térmica: ${feelsLikeElementCelsius.toFixed(1)}°C`
+    tempMinElement.innerText = `${tempMinCelsius.toFixed(1)}°C`;
+    tempMaxElement.innerText = `${tempMaxCelsius.toFixed(1)}°C`;
     isFahrenheit = false;
   }
 })
