@@ -129,6 +129,11 @@ function font0emToggle() {
  return font0emToggled
 }
 
+function toTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 // Eventos
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -141,6 +146,7 @@ searchBtn.addEventListener("click", (event) => {
     showWeatherData(city);
     cityInput.value = '';
     retira_acentos(city);
+    toTop();
 
   if (title.className == "title") {
     title.classList.toggle('hidden');
