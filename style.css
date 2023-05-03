@@ -261,6 +261,7 @@ input[type="search"]::placeholder {
 }
 
 .infos {
+    background-color: rgba(0, 0, 0, 0);
     position: absolute;
 	inset: 0;
 	display: grid;
