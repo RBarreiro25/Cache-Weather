@@ -181,13 +181,13 @@ detailsElement.forEach(function(e) {
 convertElement.addEventListener("click", function() {
   if(!isFahrenheit) {
     tempElement.innerText = `${((tempCelsius * 1.8) + 32).toFixed(1)}°F`;
-    feelsLikeElement.innerText = `Sensação térmica: ${((feelsLikeElementCelsius * 1.8) + 32).toFixed(1)}°F`
+    feelsLikeElement.innerText = `Feels like: ${((feelsLikeElementCelsius * 1.8) + 32).toFixed(1)}°F`
     tempMinElement.innerText = `${((tempMinCelsius * 1.8) + 32).toFixed(1)}°F`;
     tempMaxElement.innerText = `${((tempMaxCelsius * 1.8) + 32).toFixed(1)}°F`;
     isFahrenheit = true;
   } else {
     tempElement.innerText = `${tempCelsius.toFixed(1)}°C`;
-    feelsLikeElement.innerText = `Sensação térmica: ${feelsLikeElementCelsius.toFixed(1)}°C`
+    feelsLikeElement.innerText = `Feels like: ${feelsLikeElementCelsius.toFixed(1)}°C`
     tempMinElement.innerText = `${tempMinCelsius.toFixed(1)}°C`;
     tempMaxElement.innerText = `${tempMaxCelsius.toFixed(1)}°C`;
     isFahrenheit = false;
