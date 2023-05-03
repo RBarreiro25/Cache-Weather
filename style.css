@@ -216,10 +216,15 @@ input[type="search"]::placeholder {
 .infos_inner {
 	position: relative;
 	height: 100%;
-	transform-style: preserve-3d;
-	transition: transform 0.5s;
     margin: 0 auto;
     width: 338px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-all 0.5s ease;
+    -moz-transition: -moz-all 0.5s ease;
+    -o-transition: -o-all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .infos_wrapper {
@@ -275,18 +280,11 @@ input[type="search"]::placeholder {
 
 #infos_front_header img, #infos_back_header img {
     cursor: pointer;
-    -webkit-transition: transform 0.4s ease 0s;
-    transition: transform 0.4s ease 0s;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
+    transition: transform 0.5s ease;
     filter: drop-shadow(0.1rem 0.1rem 2px rgba(0, 0, 0, 0.1));
-}
-
-#infos_front_header img:hover, #infos_back_header img:hover {
-    filter: brightness(1.5);
-    -webkit-transition: transform 0.4s ease 0s;
-    transition: transform 0.4s ease 0s;
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
-    filter: drop-shadow(0.2rem 0.2rem 3px rgba(0, 0, 0, 0.2));
 }
 
 .infos_front h2 {
