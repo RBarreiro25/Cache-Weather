@@ -48,7 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
-    margin-bottom: 260px;
+    margin-bottom: 240px;
 }
 
 #title {
@@ -455,6 +455,10 @@ input[type="search"]::placeholder {
 }
 
 @media only screen and (max-width: 1200px) {
+
+#main {
+    margin-bottom: 170px;
+}
 
 #title {
     margin-top: 230px;
